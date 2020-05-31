@@ -53,11 +53,11 @@ class Point:
 
 def main():
     total_number_of_weight_changes = 0
-    number_of_attempts = 1000
-    for i in range(number_of_attempts):
+    number_of_runs = 1000
+    for i in range(number_of_runs):
         perceptron = Perceptron(10)
         total_number_of_weight_changes += perceptron.find_g()
-    average_number_of_weight_changes = total_number_of_weight_changes / number_of_attempts
+    average_number_of_weight_changes = total_number_of_weight_changes / number_of_runs
     print("The average number of iterations it took to converge was: " + str(average_number_of_weight_changes))
 
 
