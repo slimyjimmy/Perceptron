@@ -71,14 +71,16 @@ def main():
     total_number_of_weight_changes = 0
     sum_of_accuracy_averages = 0.0
     number_of_runs = 1000
+    number_of_training_points = 100
+    number_of_test_points = 1000
     for i in range(number_of_runs):
-        perceptron = Perceptron(10, 1000)
+        perceptron = Perceptron(number_of_training_points, number_of_test_points)
         total_number_of_weight_changes += perceptron.find_g()
         # test
         sum_of_accuracy_averages += perceptron.test_g()
     average_number_of_weight_changes = total_number_of_weight_changes / number_of_runs
     accuracy_average = sum_of_accuracy_averages / number_of_runs
-    print("The average number of iterations it took to converge was: " + str(average_number_of_weight_changes))
+    print("The average number of iterations it took to   converge was: " + str(average_number_of_weight_changes))
     print("The average accuracy tested on test points was: " + str(accuracy_average * 100) + "%")
 
 
